@@ -1,9 +1,9 @@
 "use strict";
-exports.__esModule = true;
-var telegraf_1 = require("telegraf");
+export const __esModule = true;
+import { Telegram, Telegraf, Markup } from "telegraf";
 var token = '5836658333:AAGM2lRF_sDjsxliWs263MW9PElVQj3-cBs';
-var telegram = new telegraf_1.Telegram(token);
-var bot = new telegraf_1.Telegraf(token);
+var telegram = new Telegram(token);
+var bot = new Telegraf(token);
 console.log("TEstRun");
 var test = document.getElementById("usercard2");
 if (test) {
@@ -24,9 +24,9 @@ bot.command('quit', function (ctx) {
     ctx.leaveChat();
 });
 bot.command('keyboard', function (ctx) {
-    ctx.reply('Keyboard', telegraf_1.Markup.inlineKeyboard([
-        telegraf_1.Markup.button.callback('First option', 'first'),
-        telegraf_1.Markup.button.callback('Second option', 'second'),
+    ctx.reply('Keyboard', Markup.inlineKeyboard([
+        Markup.button.callback('First option', 'first'),
+        Markup.button.callback('Second option', 'second'),
     ]));
 });
 bot.on('text', function (ctx) {
