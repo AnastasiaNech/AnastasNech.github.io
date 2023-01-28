@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   {
       var test = (window as any).Telegram.WebApp;
 
-
       test.expand();
 
       test.MainButton.textColor = "#FFFFFF";

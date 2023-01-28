@@ -6,7 +6,7 @@ const token: string = '5836658333:AAGM2lRF_sDjsxliWs263MW9PElVQj3-cBs' as string
 const telegram: Telegram = new Telegram(token);
 
 const bot: Telegraf<Context<Update>> = new Telegraf(token);
-
+console.log("TEstRun");
 var test = document.getElementById("usercard2");
 if(test)
 {
