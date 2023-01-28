@@ -7,6 +7,12 @@ const telegram: Telegram = new Telegram(token);
 
 const bot: Telegraf<Context<Update>> = new Telegraf(token);
 
+var test = document.getElementById("usercard2");
+if(test)
+{
+  test.innerHTML = "TestInput";
+}
+
 bot.start((ctx) => {
   ctx.reply('Hello ' + ctx.from.first_name + '!');
 });

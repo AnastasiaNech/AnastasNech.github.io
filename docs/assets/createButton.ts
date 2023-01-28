@@ -7,6 +7,12 @@ const telegram: Telegram = new Telegram(token);
 
 const bot: Telegraf<Context<Update>> = new Telegraf(token);
 
+var test = document.getElementById("usercard2");
+if(test)
+{
+  test.innerHTML = "TestInput";
+}
+
 bot.start((ctx) => {
   ctx.reply('Hello ' + ctx.from.first_name + '!');
 });
@@ -42,9 +48,3 @@ bot.on('text', (ctx) => {
       ' Option!'
   );
 });
-
-bot.launch();
-
-// Enable graceful stop
-process.once('SIGINT', () => bot.stop('SIGINT'));
-process.once('SIGTERM', () => bot.stop('SIGTERM'));
