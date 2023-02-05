@@ -22,9 +22,5 @@ color: floralwhite;
     bottom: 0;
     position: absolute;
     z-index: -999;
-    overflow-x: hidden;
-}
-
-.info{
-    overflow-x: auto;
+    background-attachment: fixed
 }
