@@ -1,9 +1,11 @@
-.main{
-    width: 100%;
-}
 .list{
     width: 100%;
     min-width: 50px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.title{
+text-align: center;
+color: floralwhite;
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, HostListener, Input } from '@angular/core';
 import { subscription } from '../item-list/item-list.component';
 import { Guid } from 'guid-typescript';
 import { subscriptionPrice } from '../price-select/price-select.component';
@@ -13,6 +13,9 @@ export class ItemComponent {
   id!: Guid;  
   img!: string;
   subscriptionPrice!: Array<subscriptionPrice>;
+  visibility_cost: boolean = false;
+
+  constructor(private el: ElementRef) {}
 
   @Input() set subscription(subscription: subscription){
     this.name = subscription.name;
@@ -20,4 +23,16 @@ export class ItemComponent {
     this.img = 'assets/img/' + subscription.img + '.png';
     this.subscriptionPrice = subscription.price;
   }  
+
+  public showPrice(): void{
+      this.visibility_cost = !this.visibility_cost;
+  }
+
+
+	@HostListener('document:click', ['$event'])
+	onClick(event: Event) {
+		if (!this.el.nativeElement.contains(event.target)) {
+      this.visibility_cost = false;
+		}
+	}
 }

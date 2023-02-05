@@ -1,0 +1,21 @@
+.price-block{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 5px 5px 5px 5px;
+    height: auto;
+    background: #686868;
+    border-radius: 15px;
+}
+.item{
+    height: 20px;
+}
+.item:active{
+    background: #dadada;
+}
+
+
+.text{
+    text-align: center;
+}

@@ -8,6 +8,7 @@ import { Guid } from 'guid-typescript';
 })
 export class PriceSelectComponent {
   @Input() subscriptionPrice!: Array<subscriptionPrice>
+  @Input() visibility_price: boolean = false
 }
 
 export interface subscriptionPrice{

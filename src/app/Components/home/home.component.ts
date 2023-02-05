@@ -12,21 +12,5 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    // this.initButton();
   }
-  // public initButton(): void
-  // {
-  //     var test = (window as any).Telegram.WebApp;
-
-  //     test.expand();
-
-  //     test.MainButton.textColor = "#FFFFFF";
-  //     test.MainButton.color = "#2cab37";
-
-  //     let usercard = document.getElementById("usercard");
-  //     let p = document.createElement("p");
-  //     p.innerText = 
-  //     test.initDataUnsafe.user.first_name + ' ' + test.initDataUnsafe.user.last_name;
-  //     usercard?.appendChild(p); 
-  // }  
 }
