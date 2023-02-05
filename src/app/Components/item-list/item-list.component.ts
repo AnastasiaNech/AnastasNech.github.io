@@ -19,6 +19,12 @@ export class ItemListComponent {
     { id: Guid.create(), name: 'Яндекс плюс', price: this.getTestPrices(), img: 'plus'},
     { id: Guid.create(), name: 'Netflix', price: this.getTestPrices(), img: 'netflix' },
     { id: Guid.create(), name: 'Ivi', price: this.getTestPrices(), img: 'ivi' },
+    { id: Guid.create(), name: 'Яндекс плюс', price: this.getTestPrices(), img: 'plus'},
+    { id: Guid.create(), name: 'Netflix', price: this.getTestPrices(), img: 'netflix' },
+    { id: Guid.create(), name: 'Ivi', price: this.getTestPrices(), img: 'ivi' },
+    { id: Guid.create(), name: 'Яндекс плюс', price: this.getTestPrices(), img: 'plus'},
+    { id: Guid.create(), name: 'Netflix', price: this.getTestPrices(), img: 'netflix' },
+    { id: Guid.create(), name: 'Ivi', price: this.getTestPrices(), img: 'ivi' },
   ]
 
   private getTestPrices(): Array<subscriptionPrice>
