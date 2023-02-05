@@ -1,8 +1,8 @@
 
  <div class="price-block"
   [style.visibility]="visibility_price == true ?'visible':'hidden'" >
-  <div class="item" *ngFor="let item of subscriptionPrice" >
+  <div class="item" *ngFor="let item of subscriptionPrice" (click)="this.SelectPrice(item)">
     <div class="text">{{item.name}} {{item.price}}</div>
-    <div class = "sep"></div>
+    <div class= "sep"></div>
 </div>
 </div>

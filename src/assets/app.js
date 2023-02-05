@@ -1,2 +1,2 @@
-let tg = window.Telegram.WebApp;
+export var tg = window.Telegram.WebApp;
 tg.expand();
