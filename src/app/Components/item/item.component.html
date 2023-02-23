@@ -1,7 +1,9 @@
 <div class="block" (click)="showPrice()">
     <img class ="icon" [src]="img"/>
     <div class ="name opensans" >{{name}}</div>
-    <price-select 
-    [visibility_price]="visibility_cost" 
-    [subscriptionPrice]="subscriptionPrice"></price-select>
 </div>
+<price-select 
+[subscription]="subscriptionItem"
+[visibility_price]="visibility_cost" 
+[subscriptionPrice]="subscriptionPrice"
+(CancelEvent)="this.showPrice()"></price-select>

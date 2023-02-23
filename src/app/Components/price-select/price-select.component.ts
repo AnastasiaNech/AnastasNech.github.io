@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { Guid } from 'guid-typescript';
-import { tg } from 'src/assets/app';
+import { subscription } from '../item-list/item-list.component';
 
 @Component({
   selector: 'price-select',
@@ -8,17 +8,32 @@ import { tg } from 'src/assets/app';
   styleUrls: ['./price-select.component.scss']
 })
 export class PriceSelectComponent {
+  
+  @Output() CancelEvent = new EventEmitter();
   @Input() subscriptionPrice!: Array<subscriptionPrice>
+  @Input() subscription!: subscription;
   @Input() visibility_price: boolean = false
+  public visibility_confirm: boolean = false;
+  public price_to_confirm! : subscriptionPrice;
+
+  constructor(private el: ElementRef) {}
 
   public SelectPrice(item:subscriptionPrice): void{
-      tg.MainButton.setText(`Вы выбрали ${item.name}`);
-      if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-      }
-      else {     
-        tg.MainButton.show();
-      }
+    this.visibility_price = false;
+    this.visibility_confirm = true;
+    this.price_to_confirm = item;    
+}
+
+@HostListener('document:click', ['$event'])
+onClick(event: Event) {
+  if (!this.el.nativeElement.contains(event.target)) {
+    this.visibility_confirm = false;
+  }
+}
+
+public Cancel(): void {
+    this.visibility_confirm = false;
+    this.CancelEvent.emit();
 }
 }
 

@@ -30,10 +30,10 @@ export class ItemListComponent {
   private getTestPrices(): Array<subscriptionPrice>
   {
   return [
-    {id: Guid.create(), name: 'месяц',price: 100},
-    {id: Guid.create(), name: '3 месяца',price: 250},
-    {id: Guid.create(), name: '6 месяцев',price: 450},
-    {id: Guid.create(), name: 'год',price: 800}
+    {id: Guid.create(), name: 'месяц',price: 5},
+    {id: Guid.create(), name: '3 месяца',price: 10},
+    {id: Guid.create(), name: '6 месяцев',price: 15},
+    {id: Guid.create(), name: 'год',price: 20}
   ]};
 }
 
