@@ -12,6 +12,7 @@ export var objSender = function(obj){
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-    tg.MainButton.setText("clicked");
-	tg.onEvent('mainButtonClicked',tg.sendData(sendingObject));
+    tg.MainButton.setText(sendingObject);
+	tg.sendData(sendingObject);
+    tg.onEvent('mainButtonClicked', tg.sendData(sendingObject))
 });
