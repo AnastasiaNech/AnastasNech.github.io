@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { objSender, tg } from 'src/assets/app';
+import { objSender } from 'src/assets/app';
 import { subscription } from '../item-list/item-list.component';
 import { subscriptionPrice } from '../price-select/price-select.component';
 
@@ -34,6 +34,7 @@ export class ConfirmFormComponent {
 
   public Confirm(): void{
     objSender(JSON.stringify(this.sendingData));
+    this.CancelEvent.emit();
   }
 
   public Cancel(): void{

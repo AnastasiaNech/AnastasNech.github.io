@@ -1,4 +1,4 @@
-export var tg = window.Telegram.WebApp;
+var tg = window.Telegram.WebApp;
 
 tg.expand();
 
@@ -11,7 +11,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function(){
 
 export var objSender = function(obj){
     tg.MainButton.setText("Вернуться в Телеграмм");
-    item = obj;
+    sendingObject = obj;
     tg.MainButton.show();
 }
 
