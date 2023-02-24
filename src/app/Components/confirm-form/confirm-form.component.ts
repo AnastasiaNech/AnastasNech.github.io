@@ -33,14 +33,9 @@ export class ConfirmFormComponent {
   }
 
   public Confirm(): void{
-    if (tg.MainButton.isActive){ //если кнопка показана 
-      tg.MainButton.setParams({"color": "#E0FFFF"}); 
-      tg.MainButton.disable() //скрываем кнопку 
-    }
-    else{ //иначе
       tg.MainButton.setParams({"color": "#143F6B"}); 
       tg.MainButton.enable() //показываем 
-    }
+      tg.sendingData('test');
   }
 
   public Cancel(): void{
