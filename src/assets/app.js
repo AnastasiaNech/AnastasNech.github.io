@@ -1,5 +1,5 @@
 var tg = window.Telegram.WebApp;
-
+export var telegr =  window.Telegram;
 tg.expand();
 
 

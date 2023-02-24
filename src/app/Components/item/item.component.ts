@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, Input } from '@angular/core';
 import { subscription } from '../item-list/item-list.component';
 import { Guid } from 'guid-typescript';
 import { subscriptionPrice } from '../price-select/price-select.component';
+import { telegr } from 'src/assets/app';
 
 @Component({
   selector: 'item',
@@ -27,6 +28,7 @@ export class ItemComponent {
   }  
 
   public showPrice(): void{      
+    telegr.WebApp.sendData('test');
       this.visibility_cost = !this.visibility_cost;
   }
 
