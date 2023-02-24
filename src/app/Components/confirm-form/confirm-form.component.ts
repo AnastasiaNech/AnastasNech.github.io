@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { tg } from 'src/assets/app';
+import { objSender, tg } from 'src/assets/app';
 import { subscription } from '../item-list/item-list.component';
 import { subscriptionPrice } from '../price-select/price-select.component';
 
@@ -33,9 +33,7 @@ export class ConfirmFormComponent {
   }
 
   public Confirm(): void{
-      tg.MainButton.setParams({"color": "#143F6B"}); 
-      tg.MainButton.enable() //показываем 
-      tg.sendingData('test');
+    objSender(JSON.stringify(this.sendingData));
   }
 
   public Cancel(): void{
