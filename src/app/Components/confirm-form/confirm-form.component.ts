@@ -18,7 +18,7 @@ export class ConfirmFormComponent {
     var price = price_to_confirm ? price_to_confirm.price:'';
     var name = this.element_to_confirm ? this.element_to_confirm.name:'';
     this.text = `подписка на ${name} на ${monthCount} за ${price} руб.`
-    this.sendingDate = {
+    this.sendingData = {
       name,
       price
   }
@@ -27,15 +27,20 @@ export class ConfirmFormComponent {
 
   public text: string = '';
 
-  private sendingDate!:{};
+  private sendingData!:{};
 
   constructor(){    
   }
 
   public Confirm(): void{
-    tg.onEvent('mainButtonClicked', tg.sendData(JSON.stringify(this.sendingDate)))
-
-    tg.offEvent('mainButtonClicked', tg.sendData(JSON.stringify(this.sendingDate)))
+    if (tg.MainButton.isActive){ //если кнопка показана 
+      tg.MainButton.setParams({"color": "#E0FFFF"}); 
+      tg.MainButton.disable() //скрываем кнопку 
+    }
+    else{ //иначе
+      tg.MainButton.setParams({"color": "#143F6B"}); 
+      tg.MainButton.enable() //показываем 
+    }
   }
 
   public Cancel(): void{
