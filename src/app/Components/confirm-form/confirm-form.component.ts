@@ -41,7 +41,7 @@ export class ConfirmFormComponent {
     this.sendingData = {
       name: this.name,
       price: this.price,
-      queryId: tg.initDataUnsafe.chat.id
+      queryId: tg.initData
     };
 
     fetch('http://localhost:8000/web-data', {
