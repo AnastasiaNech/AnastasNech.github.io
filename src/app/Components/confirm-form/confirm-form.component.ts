@@ -43,7 +43,7 @@ export class ConfirmFormComponent {
       price: this.price,
       queryId: tg.initData
     };
-
+    this.text = tg.initData;
     fetch('http://localhost:8000/web-data', {
       method: 'POST',
        headers: {
@@ -51,7 +51,7 @@ export class ConfirmFormComponent {
        },
       body: JSON.stringify(this.sendingData)
   })
-    this.CancelEvent.emit();
+    // this.CancelEvent.emit();
   }
 
   public Cancel(): void{
