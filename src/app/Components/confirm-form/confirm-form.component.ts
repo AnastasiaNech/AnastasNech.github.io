@@ -34,6 +34,7 @@ export class ConfirmFormComponent {
   }
 
   public Confirm(): void{
+    console.log('test',  this.sendingData)
     fetch('http://localhost:8000/web-data', {
       method: 'POST',
        headers: {
