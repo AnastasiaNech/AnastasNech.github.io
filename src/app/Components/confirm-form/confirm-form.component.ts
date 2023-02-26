@@ -17,8 +17,7 @@ export class ConfirmFormComponent {
     var monthCount = price_to_confirm ? price_to_confirm.name:'';
     var price = price_to_confirm ? price_to_confirm.price:'';
     var name = this.element_to_confirm ? this.element_to_confirm.name:'';
-    this.text = queryId;
-    // this.text = `подписка на ${name} на ${monthCount} за ${price} руб.`
+    this.text = `подписка на ${name} на ${monthCount} за ${price} руб.`
     this.sendingData = {
       name,
       price,
