@@ -10,20 +10,23 @@ import { subscriptionPrice } from '../price-select/price-select.component';
 })
 export class ConfirmFormComponent {
 
+  public queryId: string = '';
+  public name: string = '';
+  public price: string | number = '';
+
   @Output() CancelEvent = new EventEmitter();
   @Input() element_to_confirm!: subscription;
-  @Input() set price_to_confirm(price_to_confirm: subscriptionPrice){
-    var queryId = tg.initDataUnsafe?.chat.id ;
+  @Input() set price_to_confirm(price_to_confirm: subscriptionPrice){    
     var monthCount = price_to_confirm ? price_to_confirm.name:'';
     var price = price_to_confirm ? price_to_confirm.price:'';
     var name = this.element_to_confirm ? this.element_to_confirm.name:'';
+
+    this.name = name;
+    this.price = price;
+
     this.text = `подписка на ${name} на ${monthCount} за ${price} руб.`
-    this.sendingData = {
-      name,
-      price,
-      queryId
   }
-  };
+  ;
 
 
   public text: string = '';
@@ -34,7 +37,12 @@ export class ConfirmFormComponent {
   }
 
   public Confirm(): void{
-    console.log('test',  this.sendingData)
+
+    this.sendingData = {
+      name: this.name,
+      price: this.price,
+      queryId: tg.initDataUnsafe?.chat?.id?.value};
+
     fetch('http://localhost:8000/web-data', {
       method: 'POST',
        headers: {
