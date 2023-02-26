@@ -13,13 +13,11 @@ export class ConfirmFormComponent {
   @Output() CancelEvent = new EventEmitter();
   @Input() element_to_confirm!: subscription;
   @Input() set price_to_confirm(price_to_confirm: subscriptionPrice){
-    var queryId = tg.initDataUnsafe?.query_id;
-    var queryId = tg.initDataUnsafe?.query_id;
-    console.log('tg.initDataUnsafe?',tg.initDataUnsafe);
+    var queryId = tg.initDataUnsafe?.chat.id ;
     var monthCount = price_to_confirm ? price_to_confirm.name:'';
     var price = price_to_confirm ? price_to_confirm.price:'';
     var name = this.element_to_confirm ? this.element_to_confirm.name:'';
-    this.text = `${tg.initDataUnsafe}`
+    this.text = queryId;
     // this.text = `подписка на ${name} на ${monthCount} за ${price} руб.`
     this.sendingData = {
       name,
