@@ -47,11 +47,9 @@ export class ConfirmFormComponent {
          'Content-Type': 'application/json',
      },
       body: JSON.stringify(this.sendingData)
-  }).then(val=>{
+  }).then(val=>{    
     if(val.status == 200){ 
-      tg.onEvent('mainButtonClicked', null)
-     
-        // tg.offEvent('mainButtonClicked', null)
+      tg.close();
     }
   })
    this.CancelEvent.emit();
