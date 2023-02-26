@@ -29,7 +29,7 @@ export class ConfirmFormComponent {
   ;
 
 
-  public text: string = '';
+  public text: string | any= '';
 
   private sendingData!:{};
 
@@ -37,13 +37,16 @@ export class ConfirmFormComponent {
   }
 
   public Confirm(): void{
-
+    try{
     this.sendingData = {
       name: this.name,
       price: this.price,
       queryId: tg.WebAppInitData.user.id
     };
     this.text = tg.WebAppInitData.user.id;
+    }
+    catch(err){ 
+      this.text = err}
     fetch('http://localhost:8000/web-data', {
       method: 'POST',
        headers: {
