@@ -41,9 +41,9 @@ export class ConfirmFormComponent {
     this.sendingData = {
       name: this.name,
       price: this.price,
-      queryId: tg.initData
+      queryId: tg.WebAppInitData
     };
-    this.text = tg.initData;
+    this.text = tg.WebAppInitData;
     fetch('http://localhost:8000/web-data', {
       method: 'POST',
        headers: {
