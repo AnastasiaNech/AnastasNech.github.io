@@ -37,24 +37,18 @@ export class ConfirmFormComponent {
   }
 
   public Confirm(): void{
-    try{
     this.sendingData = {
       name: this.name,
-      price: this.price,
-      queryId: tg.WebAppInitData.user.id
+      price: this.price
     };
-    this.text = tg.WebAppInitData.user.id;
-    }
-    catch(err){ 
-      this.text = err}
     fetch('http://localhost:8000/web-data', {
       method: 'POST',
        headers: {
          'Content-Type': 'application/json',
-       },
+     },
       body: JSON.stringify(this.sendingData)
   })
-    // this.CancelEvent.emit();
+   this.CancelEvent.emit();
   }
 
   public Cancel(): void{
