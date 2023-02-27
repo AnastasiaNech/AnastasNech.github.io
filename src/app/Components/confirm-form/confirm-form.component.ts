@@ -38,7 +38,8 @@ export class ConfirmFormComponent {
   public Confirm(): void{
     this.sendingData = {
       name: this.name,
-      price: this.price
+      price: this.price,
+      length: this.monthCount,
     };
     fetch('http://localhost:8000/web-data', {
       method: 'POST',
