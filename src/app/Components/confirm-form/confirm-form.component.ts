@@ -13,6 +13,7 @@ export class ConfirmFormComponent {
   public queryId: string = '';
   public name: string = '';
   public price: string | number = '';
+  public monthCount: string = '';
 
   @Output() CancelEvent = new EventEmitter();
   @Input() element_to_confirm!: subscription;
@@ -23,10 +24,8 @@ export class ConfirmFormComponent {
 
     this.name = name;
     this.price = price;
-
-    this.text = `подписка на ${name} на ${monthCount} за ${price} руб.`
-  }
-  ;
+    this.monthCount = monthCount;
+  };
 
 
   public text: string | any= '';
