@@ -45,6 +45,7 @@ export class ConfirmFormComponent {
     };
      fetch('http://92.53.115.198:8000/web-data', {
       method: 'POST',
+      mode: 'cors',
        headers: {
          'Content-Type': 'application/json',
      },
