@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { tg } from 'src/assets/app';
+import * as tg from 'src/assets/app';
 import { subscription } from '../item-list/item-list.component';
 import { subscriptionPrice } from '../price-select/price-select.component';
 
@@ -40,8 +40,8 @@ export class ConfirmFormComponent {
       name: this.name,
       price: this.price,
       length: this.monthCount,
-      // bot_ID: tg.initDataUnsafe?.user?.id
-      bot_ID: 458637056
+      bot_ID: tg.initDataUnsafe?.user?.id,
+      // bot_ID: 458637056
     };
      fetch('http://92.53.115.198:8000/web-data', {
       method: 'POST',
