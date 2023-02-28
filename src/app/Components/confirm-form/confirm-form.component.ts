@@ -41,7 +41,7 @@ export class ConfirmFormComponent {
       price: this.price,
       length: this.monthCount,
     };
-    fetch('http://localhost:8000/web-data', {
+    fetch('http://92.53.115.198:22/web-data', {
       method: 'POST',
        headers: {
          'Content-Type': 'application/json',
