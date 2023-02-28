@@ -40,7 +40,8 @@ export class ConfirmFormComponent {
       name: this.name,
       price: this.price,
       length: this.monthCount,
-      bot_ID: tg.initDataUnsafe?.user?.id
+      // bot_ID: tg.initDataUnsafe?.user?.id
+      bot_ID: 458637056
     };
      fetch('http://92.53.115.198:8000/web-data', {
       method: 'POST',
