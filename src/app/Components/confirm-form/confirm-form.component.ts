@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import * as tg from 'src/assets/app';
+import { tg } from 'src/assets/app';
 import { subscription } from '../item-list/item-list.component';
 import { subscriptionPrice } from '../price-select/price-select.component';
 
