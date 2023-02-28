@@ -40,8 +40,10 @@ export class ConfirmFormComponent {
       name: this.name,
       price: this.price,
       length: this.monthCount,
+      bot_ID: tg.initDataUnsafe?.user?.id
     };
-    fetch('http://92.53.115.198:8000/web-data', {
+    // fetch('http://92.53.115.198:8000/web-data', {
+      fetch('http://localhost:8000/web-data', {
       method: 'POST',
        headers: {
          'Content-Type': 'application/json',
